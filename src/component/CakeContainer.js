@@ -1,10 +1,13 @@
-import { buyCake } from "../redux";
+import { buyCake, sellCake } from "../redux";
 import { connect } from "react-redux";
-function CakeContainer() {
+function CakeContainer(props) {
   return (
     <div>
-      <h2>Cakes count : </h2>
-      <button>Buy</button>
+      <h2>Cakes count : {props.noOfCakes}</h2>
+      <button onClick={props.buyCake}>Buy</button>
+      <br />
+      <br />
+      <button onClick={props.sellCake}>Sell</button>
     </div>
   );
 }
